@@ -22,6 +22,24 @@ By configuring Psycopg2's co-routine support (via
 [psycogreen](https://bitbucket.org/dvarrazzo/psycogreen)) we 
 can make the Postgres sleep non-blocking.
 
+## Docker Instructions
+
+*START Temporary Edit*
+
+```
+git clone https://github.com/eosrei/async-flask-sqlalchemy-example.git
+cd async-flask-sqlalchemy-example
+git checkout docker
+./docker-run.sh # Defaults to 5 requests, edit to raise or skip the slower tests.
+# A separate terminal
+docker-compose run --rm --name test web
+# Password: postgres
+psql -h db -U postgres postgres
+# Run multiple time during tests to see count.
+SELECT sum(numbackends) FROM pg_stat_database;
+```
+
+*END Temporary Edit*
 
 ## Installation
 

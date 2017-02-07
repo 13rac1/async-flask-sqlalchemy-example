@@ -2,7 +2,7 @@ import sys
 import os
 import time
 from flask import Flask, jsonify
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 
 # Optionally, set up psycopg2 & SQLAlchemy to be greenlet-friendly.
